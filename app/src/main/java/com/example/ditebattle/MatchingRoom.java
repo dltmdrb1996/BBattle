@@ -198,6 +198,7 @@ public class MatchingRoom extends AppCompatActivity {
                         guestOut=false;
                         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("chat").child(title).child("guestuid");
                         ref.removeValue();
+                        infoDialog.dismiss();
                     }
                 });
                 ivExit.setOnTouchListener(new View.OnTouchListener() {

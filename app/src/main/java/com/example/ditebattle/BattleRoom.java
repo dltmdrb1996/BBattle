@@ -255,6 +255,7 @@ public class BattleRoom extends AppCompatActivity {
                         pointdialog.show();
                         pointdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+
                         ivPointExit.setOnTouchListener(new View.OnTouchListener() {
                             @Override
                             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -270,6 +271,7 @@ public class BattleRoom extends AppCompatActivity {
                                 return true;
                             }
                         });
+
                         ivPointBuy1.setOnTouchListener(new View.OnTouchListener() {
                             @Override
                             public boolean onTouch(View view, MotionEvent motionEvent) {

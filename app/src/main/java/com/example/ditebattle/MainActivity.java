@@ -700,4 +700,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+       AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("앱을 종료하시겠습니까?");
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("cancle",null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }
