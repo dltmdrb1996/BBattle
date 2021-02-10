@@ -58,7 +58,7 @@ public class Board extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.board);
+        setContentView(R.layout.activity_board);
         ActionBar bar = getSupportActionBar();
         bar.hide();
 
@@ -79,7 +79,7 @@ public class Board extends AppCompatActivity {
             @Override
             public void onSingleClick(View v) {
                 boardWriteDialog = new Dialog(Board.this);
-                boardWriteDialog.setContentView(R.layout.boardwrite);
+                boardWriteDialog.setContentView(R.layout.activity_board_write_dialog);
 
                 ivBoardExit = (ImageView) boardWriteDialog.findViewById(R.id.ivBoardExit);
                 etBoardTitle = (EditText) boardWriteDialog.findViewById(R.id.etBoardTitle);

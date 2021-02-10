@@ -34,8 +34,6 @@ import com.example.ditebattle.board.Board;
 import com.example.ditebattle.database.Battle;
 import com.example.ditebattle.database.User;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -46,14 +44,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -104,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        navigationView.inflateHeaderView(R.layout.nav_header_main);
+        navigationView.inflateHeaderView(R.layout.activity_main_drawermenubar);
         View headerView = navigationView.getHeaderView(0);
         main_nav_btn_battle = (TextView) headerView.findViewById(R.id.main_nav_btn_battle);
         main_nav_btn_kal = (TextView) headerView.findViewById(R.id.main_nav_btn_kal);
@@ -141,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
                         main_nav_btn_battle.setTextColor(Color.parseColor("#ffffff"));
                         main_nav_btn_battle.setBackgroundDrawable(ContextCompat.getDrawable(MainActivity.this,R.drawable.buttoncustom));
                         Intent intent;
+
+                        // 현재 대결 진행중일시 배틀룸으로 아닐시 매칭으로 이동
                         if(myUserDb.get(9).equals("false")) {
                             intent = new Intent(MainActivity.this, Matching.class);
                         }else{
@@ -200,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 로그아웃 텍스트 클릭
+        // 로그아웃 클릭
         nav_logout.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -225,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //공지사항 텍스트 클릭
+        //공지사항 클릭
         nav_notice.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -244,7 +241,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        //고객센터 텍스트 클릭
+
+        //고객센터 클릭
         nav_cs.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -263,6 +261,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
         // 미션 버튼 클릭
         mainHomeIvMission.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -281,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             mainHomeIvMission.setBackgroundResource(R.drawable.layoutborderbutton);
                             missionDialog = new Dialog(MainActivity.this);
-                            missionDialog.setContentView(R.layout.activity_main_homemissiondialog);
+                            missionDialog.setContentView(R.layout.activity_main_homemission_dialog);
                             home_mission_dialog_1 = (TextView)missionDialog.findViewById(R.id.home_mission_dialog_1);
                             home_mission_dialog_2 = (TextView)missionDialog.findViewById(R.id.home_mission_dialog_2);
                             home_mission_dialog_3 = (TextView)missionDialog.findViewById(R.id.home_mission_dialog_3);
@@ -332,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_UP:
                         mainHomeIvCheck.setBackgroundResource(R.drawable.layoutborderbutton);
                         weightDialog = new Dialog(MainActivity.this);
-                        weightDialog.setContentView(R.layout.activity_main_homebluetoothdialog);
+                        weightDialog.setContentView(R.layout.activity_main_homebluetooth_dialog);
                         home_iv_Weight_Btn =(Button) weightDialog.findViewById(R.id.home_iv_Weight_Btn);
                         home_iv_Weight_Tv = (TextView) weightDialog.findViewById(R.id.home_iv_Weight_Tv);
                         home_iv_Weight_Iv = (ImageView)weightDialog.findViewById(R.id.home_iv_Weight_Iv);
@@ -343,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
                         home_iv_Weight_Btn.setOnClickListener(new OnSingleClickListener() {
                             @Override
                             public void onSingleClick(View v) {
-                                checkBluetooth();
+                                checkBluetooth(); /// 블루투스 연동
                             }
                         });
 
@@ -393,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_UP:
                         mainHomeIvMyInfo.setBackgroundResource(R.drawable.layoutborderbutton);
                         infoDialog = new Dialog(MainActivity.this);
-                        infoDialog.setContentView(R.layout.infomationdialog);
+                        infoDialog.setContentView(R.layout.activity_matching_room_infomation_dialog);
                         tvNickname = (TextView) infoDialog.findViewById(R.id.tvNickname);
                         tvLevel = (TextView) infoDialog.findViewById(R.id.tvLevel);
                         tvHeight = (TextView) infoDialog.findViewById(R.id.tvHeight);
@@ -405,10 +404,10 @@ public class MainActivity extends AppCompatActivity {
                         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                /// 내 정보 가져옴
                                     User myInfo = snapshot.child("User").child(user.getUid()).getValue(User.class);
-
                                     int Level = myInfo.total_point / 500;
-
                                     tvNickname.setText("닉네임 : " + myInfo.nickname);
                                     tvLevel.setText("Level : " + Level);
                                     tvHeight.setText("키 : " + myInfo.height);
@@ -455,6 +454,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    /// 처음 DB정보를 불러오는 리스너
     private void readUserDB() {
         Query sortbyUid = FirebaseDatabase.getInstance().getReference();
         sortbyUid.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -487,6 +487,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /// 배틀이 시작되거나 종료되었을떄 수정된 값을 갱신해주는 메소드
     void changeUser(){
         DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference().child("User").child(user.getUid());
         ref1.addChildEventListener(new ChildEventListener() {
@@ -500,7 +501,6 @@ public class MainActivity extends AppCompatActivity {
                     if(snapshot.getKey().equals("battle")){
                         myUserDb.set(9,snapshot.getValue(String.class));
                     }
-
             }
 
             @Override
@@ -700,6 +700,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    /// 종료 확인 팝업 생성
     @Override
     public void onBackPressed() {
        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

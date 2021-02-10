@@ -23,6 +23,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    /// 기존에 등록되지 않은 사용자가 사용자정보등록을 위해 이동하는 액티비티
+
     EditText ninknameEdt, weightEdt, heightEdt, ageEdt;
     Button NavStartBtn;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -62,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
         NavStartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //데이터 유효성 검사
                 if(TextUtils.isEmpty(ninknameEdt.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "닉네임을 입력해주십시오", Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(weightEdt.getText().toString())){
@@ -74,6 +78,8 @@ public class RegisterActivity extends AppCompatActivity {
                     weight = Double.parseDouble(weightEdt.getText().toString());
                     height = Double.parseDouble(heightEdt.getText().toString());
                     bmi= Double.parseDouble(String.format("%.2f",((weight/(height*height))*10000)));
+
+                    // 유저 DB 객체 생성
                     userInfo = new User(
                             user.getEmail(),
                             ninknameEdt.getText().toString(),
@@ -88,9 +94,11 @@ public class RegisterActivity extends AppCompatActivity {
                             "false"
                     );
                     userValue = userInfo.toMap();
+                    //만들어진 데이터셋을 파이어베이스 DB에 저장
                     childUpdates.put("/User/" + user.getUid(), userValue);
                     mDBReference.updateChildren(childUpdates);
 
+                    //메인으로 이동
                     Toast.makeText(getApplicationContext(), "successfully signed in", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                     startActivity(intent);

@@ -38,6 +38,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GoogleLoginActivity extends AppCompatActivity {
+
+    /// 구글 로그인 API를 이용해 구글 계정을 통해 로그인하는 페이지
+
     private SignInButton googleSignInBtn;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;

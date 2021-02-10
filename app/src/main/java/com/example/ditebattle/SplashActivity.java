@@ -19,6 +19,8 @@ SplashActivity extends AppCompatActivity {
         splash_logo=(ImageView)findViewById(R.id.splash_logo3);
         startLoading();
     }
+
+    //잠깐 딜레이후 로그인페이지로 이동
     private void startLoading() {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

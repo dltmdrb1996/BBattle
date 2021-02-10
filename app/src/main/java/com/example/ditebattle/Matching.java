@@ -13,7 +13,7 @@ public class Matching extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.matching);
+        setContentView(R.layout.activity_matching);
         ActionBar ac = getSupportActionBar();
         ac.hide();
 

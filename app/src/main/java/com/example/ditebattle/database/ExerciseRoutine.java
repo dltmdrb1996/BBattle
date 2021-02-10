@@ -1,4 +1,4 @@
-package com.example.ditebattle.mission;
+package com.example.ditebattle.database;
 
 public class ExerciseRoutine {
     public Integer reps;

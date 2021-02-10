@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.example.ditebattle.home.HomeFragment"
         android:label=""
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/navigation_home" />
 
 <!--    <fragment-->
 <!--        android:id="@+id/nav_gallery"-->

@@ -1,13 +1,11 @@
 package com.example.ditebattle;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +19,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
-import java.util.Timer;
 
 
 public class BattleFragment extends Fragment {
@@ -49,7 +46,7 @@ public class BattleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_battle, container, false);
+        View view = inflater.inflate(R.layout.activity_battle_fragment_battle, container, false);
         // Inflate the layout for this fragment
         battleFragPlayerLeft = view.findViewById(R.id.battleFragPlayerLeft);
         battleFragPlayerRight = view.findViewById(R.id.battleFragPlayerRight);
@@ -62,31 +59,40 @@ public class BattleFragment extends Fragment {
         battleFragLeftName = view.findViewById(R.id.battleFragLeftName);
 
         battleFragProgressRight.setRotation(180);
+
+        /// gif 캐릭터 보여주기
         Glide.with(this).load(R.drawable.battle_player_left).into(battleFragPlayerLeft);
         Glide.with(this).load(R.drawable.battle_player_right).into(battleFragPlayerRight);
+
 
         thread = new Thread() {
             @Override
             public void run() {
                 try {
                     while (!isInterrupted()) {
+                        /// DB 정보가 갱신 될때마다 액티비티에서 DB 전달
                         battle=((BattleRoom)getActivity()).deliverBattle();
                         user=((BattleRoom)getActivity()).deliverUser();
                         mHandler.post(new Runnable() {
                             @Override
                             public void run() {
-                                //Calendario para obtener fecha & hora
+                                /// 대결 종료까지 남은 시간 계산
                                 long t = System.currentTimeMillis() / 1000;
                                 long totalSec = Long.parseLong(battle.get(2)) - t;
                                 long day = totalSec / (60 * 60 * 24);
                                 long hour = (totalSec - day * 60 * 60 * 24) / (60 * 60);
                                 long minute = (totalSec - day * 60 * 60 * 24 - hour * 3600) / 60;
                                 long second = totalSec % 60;
+
                                 battleFragTimerTv.setText(day + "일 " + hour + "시간 " + minute + "분 " + second + "초");
+
+                                // HP 텍스트와 프로그래스 수정
                                 battleFragProgressLeft.setProgress(Integer.parseInt(battle.get(3)));
                                 battleFragProgressRight.setProgress(Integer.parseInt(battle.get(4)));
                                 battleFragHpTvMaster.setText((battle.get(3))+"/300");
                                 battleFragHpTvGuest.setText((battle.get(4))+"/300");
+
+                                // 닉네님 출력
                                 if (!uid.getUid().equals(battle.get(1))) {
                                     battleFragLeftName.setText(user.get(1));
                                     battleFragRightName.setText("상대방");

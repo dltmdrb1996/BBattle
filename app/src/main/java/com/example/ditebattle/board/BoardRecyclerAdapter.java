@@ -32,7 +32,7 @@ public class BoardRecyclerAdapter extends RecyclerView.Adapter<BoardRecyclerAdap
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.boardrecyclerview,parent,false);
+        View view = inflater.inflate(R.layout.activity_board_recycler_viewholder,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
 
@@ -86,7 +86,7 @@ public class BoardRecyclerAdapter extends RecyclerView.Adapter<BoardRecyclerAdap
                             boardlayout.setBackgroundDrawable(ContextCompat.getDrawable(boardlayout.getContext(),R.drawable.edgeborderbtn3));
 
                             boardInfo = new Dialog(boardlayout.getContext());
-                            boardInfo.setContentView(R.layout.boardinfo);
+                            boardInfo.setContentView(R.layout.activity_board_info_dialog);
 
                             boardInfoNickName = (TextView) boardInfo.findViewById(R.id.boardInfoNickName);
                             boardInfoTitle = (TextView) boardInfo.findViewById(R.id.boardInfoTitle);

@@ -1,7 +1,6 @@
 package com.example.ditebattle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -22,12 +21,10 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -55,7 +52,7 @@ public class MatchingList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.matchinglist);
+        setContentView(R.layout.activity_matchinglist);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         btn1 = (Button) findViewById(R.id.btn1);
@@ -68,7 +65,7 @@ public class MatchingList extends AppCompatActivity {
             @Override
             public void onSingleClick(View v) {
                 roomMakeDialog = new Dialog(MatchingList.this);
-                roomMakeDialog.setContentView(R.layout.matchinglistroommakedialog);
+                roomMakeDialog.setContentView(R.layout.activity_matchinglist_create_dialog);
                 {
                     btnMatchingListRoomMakeMake = (Button) roomMakeDialog.findViewById(R.id.btnMatchingListRoomMakeMake);
                     btnMatchingListRoomMakeCancel = (Button) roomMakeDialog.findViewById(R.id.btnMatchingListRoomMakeCancle);
@@ -82,6 +79,7 @@ public class MatchingList extends AppCompatActivity {
                 } // 다이럴로그 버튼 연결
 
 
+                /// 방만들기 설정 선택
                 roomMakeDialog.show();
                 roomMakeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 btnMatchingListRoomMakeMan.setOnClickListener(new OnSingleClickListener() {
@@ -177,7 +175,7 @@ public class MatchingList extends AppCompatActivity {
             @Override
             public void onSingleClick(View v) {
                 roomSearchDialog = new Dialog(MatchingList.this);
-                roomSearchDialog.setContentView(R.layout.matchinglistroomsearchdialog);
+                roomSearchDialog.setContentView(R.layout.activity_matchinglist_search_dialog);
                 matchingRoomSerchBtn = (Button) roomSearchDialog.findViewById(R.id.matchingRoomSerchBtn);
                 matchingRoomSerchEdt = (EditText) roomSearchDialog.findViewById(R.id.matchingRoomSerchEdt);
                 roomSearchDialog.show();
@@ -206,50 +204,12 @@ public class MatchingList extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(context,
                 LinearLayoutManager.VERTICAL, false);
         rView1.setLayoutManager(layoutManager);
-
-        // 아이템 추가 코드
-//        items.add(0, new RecyclerItemData("1","고수방","여/65kg/고수"));
-//        items.add(1, new RecyclerItemData("2","초보만 들어오세요","남/88kg/중"));
-
-        // 데이터베이스 가져와 리싸이클러뷰 방 만들기
         showChatList();
 
     }
 
-//    private void showChatList() {
-//
-//        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); // 파이어베이스 데이터베이스 연동
-//        DatabaseReference databaseReference = firebaseDatabase.getReference("chat"); // DB 테이블 연결
-//        Query numQ = databaseReference.orderByChild("number");
-//        numQ.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
-//                items.clear(); // 기존 배열리스트가 존재하지않게 초기화
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) { // 반복문으로 데이터 List를 추출해냄
-//                    RecyclerItemData roomList = snapshot.getValue(RecyclerItemData.class); // 만들어뒀던 RecyclerItemData 객체에 데이터를 담는다.
-//                    if (Integer.parseInt(roomList.number) == i) {
-//                        i++;
-//                    } else {
-//                    }
-//                    // 담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
-//                    items.add(roomList);
-//                }
-//                rAdapter.notifyDataSetChanged(); // 리스트 저장 및 새로고침해야 반영이 됨
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                // 디비를 가져오던중 에러 발생 시
-//                Log.e("Fraglike", String.valueOf(error.toException())); // 에러문 출력
-//            }
-//        });
-//        rAdapter = new RecyclerAdapter(items);
-//        rView1.setAdapter(rAdapter);
-//    }
 
     private void showChatList() {
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -268,7 +228,6 @@ public class MatchingList extends AppCompatActivity {
                 Log.e("Fraglike", String.valueOf(error.toException())); // 에러문 출력
             }
         });
-
         rAdapter = new RecyclerAdapter(items);
         rView1.setAdapter(rAdapter);
     }
