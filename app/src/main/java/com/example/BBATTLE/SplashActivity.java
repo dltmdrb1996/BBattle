@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
 
 public class
 SplashActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.ditebattle.board;
+package com.example.BBATTLE.board;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -22,9 +22,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ditebattle.OnSingleClickListener;
-import com.example.ditebattle.R;
-import com.example.ditebattle.database.User;
+import com.example.BBATTLE.OnSingleClickListener;
+import com.example.BBATTLE.R;
+import com.example.BBATTLE.database.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

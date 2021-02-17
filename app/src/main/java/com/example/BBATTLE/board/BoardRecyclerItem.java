@@ -1,4 +1,4 @@
-package com.example.ditebattle.board;
+package com.example.BBATTLE.board;
 
 public class BoardRecyclerItem {
     String nickname, title, date, memo;

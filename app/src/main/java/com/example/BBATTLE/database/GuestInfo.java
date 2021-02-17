@@ -1,4 +1,4 @@
-package com.example.ditebattle.database;
+package com.example.BBATTLE.database;
 
 public class GuestInfo {
     public String email;

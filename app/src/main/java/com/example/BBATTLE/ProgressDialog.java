@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import android.app.Dialog;
 import android.content.Context;

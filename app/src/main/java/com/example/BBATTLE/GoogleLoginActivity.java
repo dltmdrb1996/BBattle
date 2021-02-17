@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,10 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.ditebattle.database.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -21,7 +19,6 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,11 +28,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class GoogleLoginActivity extends AppCompatActivity {
 
@@ -121,10 +114,7 @@ public class GoogleLoginActivity extends AppCompatActivity {
                         } else {
                             Log.e("여기가문제",""+task.getException());
                             // If sign in fails, display a message to the user.
-
                         }
-
-                        // ...
                     }
                 });
     }
@@ -159,7 +149,6 @@ public class GoogleLoginActivity extends AppCompatActivity {
     }
 
     public void jumpJoin(){
-
         Toast.makeText(getApplicationContext(), "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(GoogleLoginActivity.this, RegisterActivity.class);
         startActivity(intent);
@@ -167,7 +156,6 @@ public class GoogleLoginActivity extends AppCompatActivity {
     }
 
     public void jumpMain(){
-
         Toast.makeText(getApplicationContext(), "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(GoogleLoginActivity.this, MainActivity.class);
         startActivity(intent);

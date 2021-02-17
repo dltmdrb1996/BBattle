@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import android.content.Intent;
 import android.os.Bundle;

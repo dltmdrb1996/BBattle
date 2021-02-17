@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.ditebattle.home.HomeFragment"
+        android:name="com.example.BBATTLE.home.HomeFragment"
         android:label=""
         tools:layout="@layout/navigation_home" />
 

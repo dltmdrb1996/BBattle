@@ -1,66 +1,41 @@
 {
   "project_info": {
-    "project_number": "739798927692",
-    "firebase_url": "https://bbattle-4934d-default-rtdb.firebaseio.com",
-    "project_id": "bbattle-4934d",
-    "storage_bucket": "bbattle-4934d.appspot.com"
+    "project_number": "631635333642",
+    "project_id": "bbattle-548bf",
+    "storage_bucket": "bbattle-548bf.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:739798927692:android:f9444513ecf89e0a7a27e9",
+        "mobilesdk_app_id": "1:631635333642:android:4e6ce4caf2fa07bd8a85f3",
         "android_client_info": {
-          "package_name": "com.example.ditebattle"
+          "package_name": "com.example.BBATTLE"
         }
       },
       "oauth_client": [
         {
-          "client_id": "739798927692-a7lg85p7g09i4mbed799qgh83d8gvhae.apps.googleusercontent.com",
+          "client_id": "631635333642-5f0a5o9svapmeopf0rf5h7rqes4ks4dl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.ditebattle",
+            "package_name": "com.example.BBATTLE",
             "certificate_hash": "252555edf87406d5727765744f497cce76b8af8c"
           }
         },
         {
-          "client_id": "739798927692-cro6ne8gnqou0rlcubtpntmn202gqqeg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.ditebattle",
-            "certificate_hash": "83314dfdb6c947a7f31d226ae0d59b9e3c8ee954"
-          }
-        },
-        {
-          "client_id": "739798927692-f67rsmqb1ph9dskjdldtu78ouotta9lo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.ditebattle",
-            "certificate_hash": "733390cae7731e5a53740eb85a1dc83b16f39c66"
-          }
-        },
-        {
-          "client_id": "739798927692-pdq7u7u3rrtr2t1ngka8qgele6g4iiip.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.ditebattle",
-            "certificate_hash": "efd9d01a4827982b2d582a8fe22453c3b81620ce"
-          }
-        },
-        {
-          "client_id": "739798927692-bcphqi6qplijab2ch980638loop9e8am.apps.googleusercontent.com",
+          "client_id": "631635333642-1ov2g849qrh66ufs4tjma6uturfmakp3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAFi61Tjo8SE4Uw1Wrph2jVYrDKuAnJRwU"
+          "current_key": "AIzaSyBjON2dcnlslKszyJqWUZCfFZQTRnIewMo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "739798927692-bcphqi6qplijab2ch980638loop9e8am.apps.googleusercontent.com",
+              "client_id": "631635333642-1ov2g849qrh66ufs4tjma6uturfmakp3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

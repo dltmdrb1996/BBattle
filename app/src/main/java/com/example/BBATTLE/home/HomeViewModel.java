@@ -1,4 +1,4 @@
-package com.example.ditebattle.home;
+package com.example.BBATTLE.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

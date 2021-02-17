@@ -1,4 +1,4 @@
-package com.example.ditebattle.database;
+package com.example.BBATTLE.database;
 
 import java.util.HashMap;
 import java.util.Map;

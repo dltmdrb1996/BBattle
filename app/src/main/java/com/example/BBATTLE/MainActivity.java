@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -30,9 +30,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.ditebattle.board.Board;
-import com.example.ditebattle.database.Battle;
-import com.example.ditebattle.database.User;
+import com.example.BBATTLE.board.Board;
+import com.example.BBATTLE.database.Battle;
+import com.example.BBATTLE.database.User;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -454,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    /// 처음 DB정보를 불러오는 리스너
+    // 처음 DB정보를 불러오는 리스너
     private void readUserDB() {
         Query sortbyUid = FirebaseDatabase.getInstance().getReference();
         sortbyUid.addListenerForSingleValueEvent(new ValueEventListener() {

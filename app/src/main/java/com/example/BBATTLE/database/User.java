@@ -1,6 +1,4 @@
-package com.example.ditebattle.database;
-
-import android.content.Intent;
+package com.example.BBATTLE.database;
 
 import java.util.HashMap;
 import java.util.Map;

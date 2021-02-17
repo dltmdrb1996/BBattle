@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,10 +27,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ditebattle.database.Battle;
-import com.example.ditebattle.database.Chating;
-import com.example.ditebattle.database.User;
-import com.example.ditebattle.database.ExerciseRoutine;
+import com.example.BBATTLE.database.Battle;
+import com.example.BBATTLE.database.Chating;
+import com.example.BBATTLE.database.User;
+import com.example.BBATTLE.database.ExerciseRoutine;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;

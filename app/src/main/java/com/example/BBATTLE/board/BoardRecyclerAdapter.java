@@ -1,4 +1,4 @@
-package com.example.ditebattle.board;
+package com.example.BBATTLE.board;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -16,7 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ditebattle.R;
+import com.example.BBATTLE.R;
 
 import java.util.ArrayList;
 

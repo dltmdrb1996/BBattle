@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ditebattle">
+    package="com.example.BBATTLE">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,14 +13,14 @@
         android:roundIcon="@mipmap/bbattle_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DiteBattle">
-        <activity android:name=".RegisterActivity"
+        <activity android:name="com.example.BBATTLE.RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".GoogleLoginActivity"
+        <activity android:name="com.example.BBATTLE.GoogleLoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SplashActivity"
+            android:name="com.example.BBATTLE.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -30,20 +30,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.BBATTLE.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Matching"
+        <activity android:name="com.example.BBATTLE.Matching"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".MatchingRoom"
+            android:name="com.example.BBATTLE.MatchingRoom"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name=".BattleRoom"
+        <activity android:name="com.example.BBATTLE.BattleRoom"
             android:screenOrientation="portrait" />
-        <activity android:name=".MatchingList"
+        <activity android:name="com.example.BBATTLE.MatchingList"
             android:screenOrientation="portrait"/>
-        <activity android:name=".board.Board"
+        <activity android:name="com.example.BBATTLE.board.Board"
             android:screenOrientation="portrait"/>
     </application>
 

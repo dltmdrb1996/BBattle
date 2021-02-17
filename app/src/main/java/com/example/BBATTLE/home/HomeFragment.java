@@ -1,4 +1,4 @@
-package com.example.ditebattle.home;
+package com.example.BBATTLE.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.ditebattle.R;
+import com.example.BBATTLE.R;
 
 public class HomeFragment extends Fragment {
 
