@@ -1,4 +1,4 @@
-package com.example.ditebattle;
+package com.example.BBATTLE;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
