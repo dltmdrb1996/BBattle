@@ -34,14 +34,19 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity android:name="com.example.BBATTLE.Matching"
+            android:windowSoftInputMode="adjustResize|adjustPan"
             android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.BBATTLE.MatchingRoom"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.example.BBATTLE.BattleRoom"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan"
+            />
         <activity android:name="com.example.BBATTLE.MatchingList"
+            android:windowSoftInputMode="adjustResize|adjustPan"
             android:screenOrientation="portrait"/>
         <activity android:name="com.example.BBATTLE.board.Board"
             android:screenOrientation="portrait"/>
