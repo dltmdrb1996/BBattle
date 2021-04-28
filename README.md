@@ -4,6 +4,7 @@
 [프로젝트 시연 영상](https://youtu.be/Wzxu1_MkUOQ)
 **(1.5 ~ 2배로 진행해주세요.)**
 ***
+<img width="960" alt="109852417-1985bb80-7c98-11eb-8075-61d0a5046439" src="https://user-images.githubusercontent.com/65164183/116391773-895c9080-a85a-11eb-85f2-544a4608c44e.png">
 ![빼틀 깃허브 사진 2 001](https://user-images.githubusercontent.com/65164183/116389879-6cbf5900-a858-11eb-890e-23d2a7e6a2cc.jpeg)
 ![빼틀 깃허브 사진 2 007](https://user-images.githubusercontent.com/65164183/116390071-a42e0580-a858-11eb-835b-317f39a56745.jpeg)
 ![빼틀 깃허브 사진 2 008](https://user-images.githubusercontent.com/65164183/116390086-a85a2300-a858-11eb-9475-644a1cd6d045.jpeg)
