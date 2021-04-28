@@ -1,4 +1,4 @@
-# DietBattle(팀 프로젝트)
+# Battle(팀 프로젝트)
 ### 빼틀
 ***
 [프로젝트 시연 영상](https://youtu.be/Wzxu1_MkUOQ)
