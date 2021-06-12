@@ -1,7 +1,7 @@
 # BBattle(팀 프로젝트)
 ### 대결이라는 키워드로 다이어트를 좀더 쉽고 재밌게 만들어 보자는 의도로 만들었습니다 
 ***
-[프로젝트 시연 영상](https://youtu.be/Wzxu1_MkUOQ)
+###[프로젝트 시연 영상](https://youtu.be/Wzxu1_MkUOQ)
 **(1.5 ~ 2배로 진행해주세요.)**
 ***
 ![사진1](https://user-images.githubusercontent.com/65164183/116391903-b3ae4e00-a85a-11eb-9a54-c504f6512bad.jpeg)
